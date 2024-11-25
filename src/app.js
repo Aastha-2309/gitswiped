@@ -3,8 +3,31 @@ const express=require("express");
 const app=express();
 
 
-app.use("/hello",(req,res)=>{
+
+app.get("/user",(req,res)=>{
+    res.send({firstname:"Aastha", lastName:"Rai"});
+});
+
+app.use("/user",(req,res)=>{
     res.send("hi from server hello");
+
+});
+
+
+
+app.post("/user",(req,res)=>{
+    console.log("saved data from db");
+    res.send("succesfully saved");
+
+});
+
+
+
+
+
+app.delete("/user",(req,res)=>{
+    console.log("saved data from db");
+    res.send("details deleted");
 
 });
 
